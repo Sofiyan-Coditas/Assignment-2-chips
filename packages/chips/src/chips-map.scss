@@ -1,0 +1,13 @@
+:host{
+    --chip-font-family: var(--global-font-family);
+    --chip-font-color: var(--secondary-text);
+    --chip-font-weight: var(--font-weight-semi-bold);
+    --chip-font-size: var(--caption-font-size);
+    --chip-background-color: var(--neutral);
+    --chip-height: 36px;
+    --chip-max-width: 288px;
+    --chip-default-border-color: var(--disabled-text-color);
+    --chip-selected-border-color: var(--primary);
+    --chip-selected-font-color: var(--primary);
+    --border-radius: 2px;
+}

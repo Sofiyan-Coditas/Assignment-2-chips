@@ -1,0 +1,66 @@
+@import "./chips-map.scss";
+
+.chips-container {
+    background-color: #eee;
+    white-space: nowrap;
+    overflow: auto;
+    padding: 5px;
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+        display: none;
+        animation-name: scroll-horizontal;
+        animation-iteration-count: 1;
+    }
+}
+@keyframes scroll-horizontal {
+    0% {
+        transition: 240ms ease;
+    }
+    100% {
+        transition: 80ms ease;
+    }
+}
+.chips {
+    margin: 5px;
+    cursor: pointer;
+    padding: var(--spacing-04) var(--spacing-05);
+    max-width: var(--chip-max-width);
+    border: 2px solid var(--disabled-text);
+    font-family: var(--chip-font-family);
+    color: var(--chip-font-color);
+    font-size: 1em;
+    height: var(--chip-height);
+    display: inline-flex;
+    box-sizing: border-box;
+    background-color: var(--chip-background-color);
+    border-radius: var(--border-radius);
+
+    .chip-content {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 20px;
+        line-height: 10px;
+        min-width: 50px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .count-label-container {
+        display: flex;
+        justify-content: flex-end;
+        height: 20px;
+        line-height: 10px;
+        .count-label {
+            text-align: right;
+            font-weight: var(--chip-font-weight);
+        }
+    }
+    &.active {
+        color: var(--chip-selected-font-color);
+        border-color: var(--chip-selected-border-color);
+        transition: cubic-bezier(0.42,0,0.58,0) 240ms;
+    }
+}
