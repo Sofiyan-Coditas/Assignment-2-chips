@@ -7,25 +7,8 @@ export default class OrxeChips extends LitElement {
   /**
   * @noInheritDoc
   */
-  @property({attribute: 'chip-content' })
-  chipContent = [
-    {
-      label: 'Label 1',
-      count: 0
-    },
-    {
-      label: 'Label 2',
-      count: 10
-    },
-    {
-      label: 'Label 3',
-      count: 9
-    },
-    {
-      label: 'Label 4',
-      count: 6
-    }
-  ];
+  @property({ type: Array, attribute: 'chip-content' })
+  chipContent = [];
 
   @property({ type: Boolean, reflect: true, attribute: 'close-chip' })
   closeChip = false;
@@ -38,10 +21,10 @@ export default class OrxeChips extends LitElement {
    * Implement `render` to define a template for chip element.
    */
   render() {
-      return html`
+    return html`
       <div class="chips-container">
-        ${this.chipContent.map((item) => 
-          html`
+        ${this.chipContent.map((item: any) =>
+      html`
           <div class="chips" @click="${this.setActive}">
             <div class="chip-content">
               <span title=${item.label.length > 50 ? item.label : ''}>${item.label}</span>
